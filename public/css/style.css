@@ -1,0 +1,25 @@
+*{
+  box-sizing:border-box;
+}
+h1{
+    color: red;
+}
+.completed{
+    text-decoration: line-through;
+    color: gray;
+}
+.not{
+    text-decoration: underline;
+}
+.todoDesc{
+  font-style: italic;
+  margin-left: 10px;
+}
+.del {
+  border: solid 2px black;
+  border-radius: 10%;
+  padding: 0 2px;
+}
+p{
+  margin: 5px 0 5px 5px;
+}
