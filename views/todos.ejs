@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>       
-                <span class='del'> Delete </span>
-                <p class='todoDesc'> <%= el.description %></p>
-            </li>
-    <% }) %>    
-    </ul>
+    <main>
+        <section class="todos-list">
+            <h1>Todos</h1>
+            <ul>
+                <% todos.forEach( el=> { %>
+                    <li class='todoItem' data-id='<%=el._id%>'>
+                        <h3 class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %>
+                        </h3>
+                        <p class='todoDesc'>
+                            <%= el.description %>
+                        </p>
+                        <button class='del'> Delete </button>
+                    </li>
+                    <% }) %>
+            </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="text" placeholder="Description" name='todoDesc'>
-        <input type="submit">
-    </form>
+        </section>
 
-    <a href="/logout">Logout</a>
+        <section class="todo-section">
+            <form action="/todos/createTodo" method='POST'>
+                <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+                <input type="text" placeholder="Description" name='todoDesc'>
+                <input class="submit-btn" type="submit">
+            </form>
+            <h2>
+                <%= user.userName %> has <span class="left-num">
+                        <%= left %>
+                    </span> things left to do.
+            </h2>
 
+            <a href="/logout">Logout</a>
+
+        </section>
+
+    </main>
     <script src="js/main.js"></script>
 </body>
+
 </html>
