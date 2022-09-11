@@ -18,8 +18,7 @@
             <ul>
                 <% todos.forEach( el=> { %>
                     <li class='todoItem' data-id='<%=el._id%>'>
-                        <h3 class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %>
-                        </h3>
+                        <h3 class='<%= el.completed === true ? 'completed' : 'not' %>'><%= el.todo %></h3>
                         <p class='todoDesc'>
                             <%= el.description %>
                         </p>

@@ -1,6 +1,6 @@
 const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const todoItem = document.querySelectorAll('h3.not')
+const todoComplete = document.querySelectorAll('h3.completed')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
