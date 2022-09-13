@@ -29,8 +29,7 @@ body {
 }
 
 .completed {
-  text-decoration: line-through;
-  color: rgb(39, 39, 39);
+  color: white;
 }
 
 .left-num {
@@ -40,6 +39,45 @@ body {
 
 .not {
   text-decoration: underline;
+}
+.mark-complete {
+  min-width: 70px;
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  display: inline-block;
+  bottom: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #57cc99;
+  background: #57cc99;
+  right: 10px;
+}
+.mark-complete:hover{
+  background: white;
+  color:#57cc99
+}
+
+.mark-incomplete{
+  min-width: 70px;
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  display: inline-block;
+  bottom: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid gray;
+  background: gray;
+  right: 10px;
 }
 
 .todoDesc {
@@ -68,8 +106,12 @@ main {
 
 .todoItem {
   position: relative;
+  
 }
-
+.todoItem-lowlight{
+  position: relative;
+  background-color: rgba(87, 204, 153, 0.3);
+}
 .del {
   min-width: 70px;
   height: 30px;
@@ -105,6 +147,7 @@ li {
   padding: 20px;
   list-style: none;
   border-radius: 10px;
+  background-color: rgba(87, 204, 153, 0.1);
   box-shadow: -2px -1px 33px 0px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -2px -1px 33px 0px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -2px -1px 33px 0px rgba(0, 0, 0, 0.31);
