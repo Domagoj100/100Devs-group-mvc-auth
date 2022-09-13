@@ -17,8 +17,9 @@
             <h1>Todos</h1>
             <ul>
                 <% todos.forEach( el=> { %>
-                    <li class='todoItem' data-id='<%=el._id%>'>
-                        <h3 class='<%= el.completed === true ? 'completed' : 'not' %>'><%= el.todo %></h3>
+                    <li id="droptarget" class='dropzone todoItem' data-id='<%=el._id%>'>
+                        <h3 class='<%= el.completed === true ? ' completed' : 'not' %>'><%= el.todo %>
+                        </h3>
                         <p class='todoDesc'>
                             <%= el.description %>
                         </p>
@@ -31,19 +32,21 @@
 
         </section>
 
-        <section class="todo-section">
-            <form action="/todos/createTodo" method='POST'>
-                <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-                <input type="text" placeholder="Description" name='todoDesc'>
-                <input class="submit-btn" type="submit">
-            </form>
-            <h2>
-                <%= user.userName %> has <span class="left-num">
-                        <%= left %>
-                    </span> things left to do.
-            </h2>
+        <section>
+            <div class="todo-section">
+                <form action="/todos/createTodo" method='POST'>
+                    <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+                    <input type="text" placeholder="Description" name='todoDesc'>
+                    <input class="submit-btn" type="submit">
+                </form>
+                <h2>
+                    <%= user.userName %> has <span class="left-num">
+                            <%= left %>
+                        </span> things left to do.
+                </h2>
 
-            <a href="/logout">Logout</a>
+                <a href="/logout">Logout</a>
+            </div>
 
         </section>
 
