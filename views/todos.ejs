@@ -12,9 +12,14 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <h1>Todos</h1>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
     <main>
         <section class="todos-list">
-            <h1>Todos</h1>
             <ul>
                 <% todos.forEach( el=> { %>
                     <li id="droptarget" class='<%= el.completed === true ? 'todoItem-lowlight' : 'todoItem' %>' data-id='<%=el._id%>'>
@@ -45,7 +50,6 @@
                         </span> things left to do.
                 </h2>
 
-                <a href="/logout">Logout</a>
             </div>
 
         </section>
